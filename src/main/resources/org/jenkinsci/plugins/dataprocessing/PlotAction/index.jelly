@@ -1,0 +1,30 @@
+<j:jelly xmlns:j="jelly:core" xmlns:l="/lib/layout" xmlns:st="jelly:stapler">
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/plugin/data-processing-plugin/highcharts/js/highcharts.js"></script>
+<script type="text/javascript" src="/plugin/data-processing-plugin/highcharts/js/modules/exporting.js"></script>
+<script type="text/javascript" src="/plugin/data-processing-plugin/js/plotUtils.js"></script>
+
+<script type="text/javascript" >
+var plotOptions = ${it.getPlotOptsJson()};
+var series = ${it.getSeriesJson()};
+</script>
+
+<script type="text/javascript" >
+$(document).ready(function createChart() {
+    var options = loadOptions(plotOptions, series);
+    chart = new Highcharts.Chart(options);
+});
+</script>
+
+<l:layout title="${it.project.displayName} #${it.number}"> 
+    <st:include page="sidepanel.jelly"/>
+    <l:main-panel>
+    	<h1>Data processing plugin</h1>
+		<p>
+		<span style="color:red"><b>${it.errorMsg}</b></span>
+		</p> 
+		<div id="container" style="width: 800px; height: 400px; margin: 0 auto"></div>
+	</l:main-panel>
+  </l:layout>
+</j:jelly>

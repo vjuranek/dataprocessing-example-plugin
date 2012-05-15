@@ -1,0 +1,14 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form" xmlns:i="jelly:fmt">
+	<j:set var="buildUrl" value="${h.decompose(request)}" />
+	<l:side-panel>
+		<l:tasks>
+			<l:task icon="images/24x24/up.png" href="${buildUrl.baseUrl}" title="${%Back to build}" />
+		</l:tasks>
+		<j:if test="${it.build.previousBuild!=null}">
+			<l:task icon="images/24x24/previous.png" href="${buildUrl.previousBuildUrl}" title="${%Previous Build plot}" contextMenu="false" />
+		</j:if>
+		<j:if test="${it.build.nextBuild!=null}">
+			<l:task icon="images/24x24/next.png" href="${buildUrl.nextBuildUrl}" title="${%Next Build plot}" contextMenu="false" />
+		</j:if>
+	</l:side-panel>
+</j:jelly>

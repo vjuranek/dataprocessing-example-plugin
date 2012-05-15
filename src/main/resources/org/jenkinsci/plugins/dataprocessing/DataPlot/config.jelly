@@ -1,0 +1,15 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+
+	<f:entry title="Arfifact with data" field="artifacts">
+		<f:textbox />
+	</f:entry>
+	
+	<!--  f:optionalBlock title="Plot options" field="plotOpts" checked="${instance.plotOpts!=null}" -->
+	<f:advanced>
+	
+		<j:set var="instance" value="${instance.plotOpts}" />
+		<st:include page="config.jelly" class="org.jenkinsci.plugins.dataprocessing.PlotOptions"/>
+	
+	<!--  /f:optionalBlock -->
+	</f:advanced>
+</j:jelly>

@@ -1,0 +1,23 @@
+ <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+
+<!-- table width="50%" -->  
+<f:rowSet name="plotOpts">
+  <f:entry title="Plot title" field="title">
+    <f:textbox />
+  </f:entry>
+  
+  <f:entry title="Plot description" field="description">
+    <f:textbox />
+  </f:entry>
+  
+  <f:entry title="X axis description" field="xAxisTitle">
+    <f:textbox />
+  </f:entry>
+  
+  <f:entry title="Y axis description" field="yAxisTitle">
+    <f:textbox />
+  </f:entry>
+</f:rowSet>
+<!-- /table -->
+  
+</j:jelly>

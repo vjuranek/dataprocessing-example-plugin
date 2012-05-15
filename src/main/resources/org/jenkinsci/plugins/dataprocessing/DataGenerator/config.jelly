@@ -1,0 +1,9 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+  
+  <f:entry title="${%Random data files}">
+    <f:repeatable field="files">
+  	  <st:include page="config.jelly" class="org.jenkinsci.plugins.dataprocessing.RandomDataFile"/> 
+    </f:repeatable >
+  </f:entry>
+  
+</j:jelly>
